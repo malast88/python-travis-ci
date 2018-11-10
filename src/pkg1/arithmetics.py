@@ -1,11 +1,13 @@
 from sys import stdin
 
-def main(input, output):
-    a = int(input.readline())
-    b = int(input.readline())
-    print(a+b, file=output)
-    print(a-b, file=output)
-    print(a*b, file=output)
+
+def main(in_file, out_file):
+    a = int(in_file.readline())
+    b = int(in_file.readline())
+    print(a + b, file=out_file)
+    print(a - b, file=out_file)
+    print(a * b, file=out_file)
+
 
 if __name__ == '__main__':
     main(stdin, None)
