@@ -1,22 +1,45 @@
 from pkg1 import arithmetics
 import io
 
+test_main_1_input = """\
+2
+3"""
+
+test_main_1_expected_output = """\
+5
+-1
+6
+"""
+
+
 def test_main_1():
-    output = io.StringIO()
-    input = io.StringIO("2\n3")
+    test_output = io.StringIO()
+    test_input = io.StringIO(test_main_1_input)
     try:
-        arithmetics.main(input, output)
-        assert "5\n-1\n6\n" == output.getvalue()
+        arithmetics.main(test_input, test_output)
+        assert test_main_1_expected_output == test_output.getvalue()
     finally:
-        input.close()
-        output.close()
+        test_input.close()
+        test_output.close()
+
+
+test_main_2_input = """\
+7
+2"""
+
+test_main_2_expected_output = """\
+9
+5
+14
+"""
+
 
 def test_main_2():
-    output = io.StringIO()
-    input = io.StringIO("7\n2")
+    test_output = io.StringIO()
+    test_input = io.StringIO(test_main_2_input)
     try:
-        arithmetics.main(input, output)
-        assert "9\n5\n14\n" == output.getvalue()
+        arithmetics.main(test_input, test_output)
+        assert test_main_2_expected_output == test_output.getvalue()
     finally:
-        input.close()
-        output.close()
+        test_input.close()
+        test_output.close()
